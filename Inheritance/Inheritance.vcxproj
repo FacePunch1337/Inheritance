@@ -124,18 +124,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Book.cpp" />
+    <ClCompile Include="Booklet.cpp" />
     <ClCompile Include="Journal.cpp" />
     <ClCompile Include="Literature.cpp" />
     <ClCompile Include="Library.cpp" />
+    <ClCompile Include="Magazine.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Newspaper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Book.h" />
+    <ClInclude Include="Booklet.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="Journal.h" />
     <ClInclude Include="Literature.h" />
     <ClInclude Include="Library.h" />
+    <ClInclude Include="Magazine.h" />
     <ClInclude Include="Newspaper.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

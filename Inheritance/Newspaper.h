@@ -9,6 +9,6 @@ public:
     Newspaper* SetNumber(int number);
     int GetNumber();
     virtual string ToString();
-
+    ~Newspaper() { cout << "Destructor" << '\t' << this << endl; };
 };
 

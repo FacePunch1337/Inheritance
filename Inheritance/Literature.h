@@ -8,4 +8,5 @@ public:
 	Literature* SetTitle(string title);
 	string GetTitle();
 	virtual string ToString() = 0;
+	~Literature() { cout << "Destructor" << '\t' << this << endl; };
 };

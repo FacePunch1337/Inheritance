@@ -10,5 +10,6 @@ public:
     Journal* SetPublishing(string publishing);
     string GetPublishing();
     virtual string ToString();
+    ~Journal() { cout << "Destructor" << '\t' << this << endl; };
 };
 
