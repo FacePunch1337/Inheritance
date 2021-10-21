@@ -1,7 +1,8 @@
 #pragma once
 #include "Header.h"
 #include "Literature.h"
-#include <string>
+
+
 class Journal : public Literature
 {
 private:

@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClCompile Include="Book.cpp" />
     <ClCompile Include="Booklet.cpp" />
+    <ClCompile Include="Childish.cpp" />
     <ClCompile Include="Journal.cpp" />
     <ClCompile Include="Literature.cpp" />
     <ClCompile Include="Library.cpp" />
@@ -135,6 +136,7 @@
   <ItemGroup>
     <ClInclude Include="Book.h" />
     <ClInclude Include="Booklet.h" />
+    <ClInclude Include="Childish.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="Journal.h" />
     <ClInclude Include="Literature.h" />

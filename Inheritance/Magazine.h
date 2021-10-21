@@ -1,7 +1,8 @@
 #pragma once
 #include "Header.h";
 #include "Journal.h"
-class Magazine : public Journal
+#include "Childish.h"
+class Magazine : public Journal, public Childish
 {
 private:
 	int year;

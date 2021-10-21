@@ -8,6 +8,7 @@
 #include "Journal.h"
 #include "Newspaper.h"
 #include "Magazine.h"
+#include "Childish.h"
 using namespace std;
 
 
