@@ -6,6 +6,7 @@ class Newspaper : public Literature
 private:
     int number;
 public:
+    Newspaper() :number(0) { cout << "Constructor Newspaper" << '\t' << this << endl; };
     Newspaper* SetNumber(int number);
     int GetNumber();
     virtual string ToString();

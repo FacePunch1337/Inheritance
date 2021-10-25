@@ -7,7 +7,7 @@ private:
 	int publish_date;
 	string publish_month;
 public:
-	Booklet():publish_date(NULL), publish_month("Month") {cout <<"Constructor"<< '\t' << this << endl; };
+	Booklet():publish_date(NULL), publish_month("Month") {cout <<"Constructor Booklet"<< '\t' << this << endl; };
 	Booklet* Set_Publish_Date(int publish_date);
 	int Get_Publish_Date();
 	Booklet* Set_Publish_Month(string publish_month);
