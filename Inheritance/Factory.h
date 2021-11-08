@@ -1,12 +1,24 @@
 #pragma once
 #include "Header.h"
 #include "Literature.h"
+#include <fstream>
+#include <vector>
+#include <filesystem>
 class Factory
 {
 private: 
 	size_t parts;
-	string* splitString(string str, char sym);
+	vector<filesystem::path> files;
+	string* splitString(string, char);
 public:
-	Literature* fromString(string std);
+	void fromFactory(const string);
+	Literature* fromString(string);
+	Literature* fromFile(string);
+	void fromDirectory(const string, const string);
+	void Print();
+		
+	
+
 };
+
 

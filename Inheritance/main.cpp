@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "Header.h"
 #include "Literature.h"
 #include "Book.h"
@@ -86,12 +87,13 @@ int main()
 	cout << endl;
 
 	Factory factory;
-	string str = "title: Quantum\npublisher: 7";
-	cout << factory.fromString(str)->ToString() << endl;
-
-
+	factory.fromFactory(".lit");
+	factory.fromDirectory("./Literature", "./lit");
+	factory.fromFactory(".h");
+	factory.Print();
 	cout << "-------------------------" << endl;
 	cout << endl;
+	
 	delete book;
 	delete newspaper;
 	delete journal;

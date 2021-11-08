@@ -1,7 +1,9 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "Header.h"
 #include "Literature.h"
 #include "Factory.h"
-
+#include <fstream>
+#include <filesystem>
 string* Factory::splitString(string str, char sym)
 {
     parts = 1;
@@ -24,6 +26,16 @@ string* Factory::splitString(string str, char sym)
     return res;
 }
 
+
+void Factory::fromFactory(const string extension)
+{
+    for (filesystem::directory_entry const& dir : filesystem::directory_iterator("./Literature"))
+    {
+        if (dir.path().extension().string() == extension)
+            files.push_back(dir);
+    }
+}
+
 Literature* Factory::fromString(string str)
 {
     auto arr = splitString(str, '\n');
@@ -44,3 +56,55 @@ Literature* Factory::fromString(string str)
     }
     return NULL;
 }
+
+Literature* Factory::fromFile(string path)
+{
+
+    string fileContent = "";
+    char buf[100];
+    ifstream file(path);
+    file.close();
+    if (!file.is_open()) {
+        return NULL;
+    }
+    int n;
+    while (!file.eof()) {
+        file.read(buf, 100);
+        n = file.gcount();
+        buf[n] = '\0';
+        fileContent += buf;
+    }
+    file.close();
+    return fromString(fileContent);
+   
+}
+
+
+
+void Factory::fromDirectory(const string dirname, const string extension)
+{
+    for (filesystem::directory_entry const& dir : filesystem::directory_iterator(dirname))
+    {
+        if (dir.is_regular_file())
+        {
+            if (dir.path().extension().string() == extension);
+            files.push_back(dir);
+        }
+    }
+    
+   
+}
+
+void Factory::Print()
+{
+    for (size_t i = 0; i < files.size(); i++)
+        cout << files[i].filename().string()
+        <<"\t" << files[i].root_name() 
+        << "\t" << files[i].extension().string() 
+        << "\t\t" << files[i].is_relative() 
+        << endl;
+}
+
+
+
+
